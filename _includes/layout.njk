@@ -2,14 +2,17 @@
 title: Ergo Keyboard Layouts
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-  </head>
-  <body>
-    {{ content | safe }}
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+  <body class="sans-serif">
+    <div class="fl w-100 ba">
+      {{ content | safe }}
+    </div>
+    <footer class="fl w-100 ba">
+      2021. <a href="{{github_link}}">GitHub source</a>.
+    </footer>
   </body>
 </html>
