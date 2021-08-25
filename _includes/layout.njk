@@ -7,12 +7,35 @@ title: Ergo Keyboard Layouts
   <title>{{ title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
-  <body class="sans-serif">
-    <div class="fl w-100 ba">
+  <link rel="stylesheet" href="/css/index.css">
+  <body class="sans-serif bg-white">
+    <header class="mw9 center pa4 pt5-ns ph7-l">
+      <div class="cover">
+        <nav class="dt w-100 mw8 center">
+        </nav>
+
+        <div class="tc-l mt4 ph3">
+          <a href="/"><img src="img/logo.jpg" alt="Retro ergonomic typewriter workstation. See attribution below."></a>
+          <h1 class="f2 f1-l fw2 black-90 mb0 lh-title">{{ title }}</h1>
+          <h2 class="fw1 f3 white-80 mt3 mb4"></h2>
+        </div>
+      </div>
+    </header>
+
+    <div class="pa4 ph7-l mw9-l center">
       {{ content | safe }}
     </div>
-    <footer class="fl w-100 ba">
-      2021. <a href="{{github_link}}">GitHub source</a>.
+    <footer class="mw9 center pa4 pt5-ns ph7-l mid-gray">
+      <small class="tl f6 db">Built in 2021 <b><a href="{{github_link}}">GitHub source</a></b></small>
+      <div class="tc mt3">
+          <!-- Additional footer links go here -->
+          <div class="lh-copy tl">
+            <span>Attribution:</span>
+            <ul>
+              <li><a href="https://commons.wikimedia.org/wiki/File:Internationale_Vakbeurs_voor_kantoorbenodigdheden_JFABO_te_Wenen_stoel_voor_sec,_Bestanddeelnr_925-5249_(cropped).jpg">Basch, Fritz</a>, CC0, via Wikimedia Commons</li>
+            </ul>
+          </div>
+        </div>
     </footer>
   </body>
 </html>
