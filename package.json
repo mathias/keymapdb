@@ -1,0 +1,23 @@
+{
+  "name": "ergo-keyboard-layouts",
+  "version": "1.0.0",
+  "description": "Static site serving up various keyboard layouts for keyboards: ergo, ortholinear, minimal, and more.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathias/ergo-keyboard-layouts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathias/ergo-keyboard-layouts/issues"
+  },
+  "homepage": "https://github.com/mathias/ergo-keyboard-layouts#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}
