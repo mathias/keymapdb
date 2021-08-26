@@ -4,7 +4,8 @@
   "description": "Static site serving up various keyboard layouts for keyboards: ergo, ortholinear, minimal, and more.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "esmtk lint",
+    "server": "eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/mathias/ergo-keyboard-layouts#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-plugin-inclusive-language": "^1.0.2"
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.2",
+    "esmtk": "^0.5.11"
   }
 }
