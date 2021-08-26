@@ -4,7 +4,10 @@ class SortableTable extends HTMLElement {
   constructor () {
     super()
     this._data = {}
-    this._filteredSortedData = {}
+    this._filteredData = {}
+    this._selected = null
+    this._column = null
+    this._direction = null
   }
 
   get src () {
@@ -31,6 +34,29 @@ class SortableTable extends HTMLElement {
   }
 
   headerClicked (e) {
+    this._selected = e.target.cellIndex;
+    const columnIndex = e.target.cellIndex - 1;
+    const column = ["name", "firmware", "language", "keyboard_models", "key_range"][columnIndex];
+
+    this._direction = (column !== this._column) ? true : !this._direction
+    this._column = column
+    this.render();
+  }
+
+  sortData(data) {
+    if (this._column === null) return data
+
+    const col = this._column;
+    const dir = this._direction;
+    const comp = dir ? (a, b) => a < b : (a, b) => a > b;
+    console.log(col)
+    return data.sort((a, b) => {
+      if (typeof(a[col]) === "string" && typeof(b[col]) === "string") {
+        return comp(a[col], b[col]) ? -1 : 1
+      } else if (Array.isArray(a[col]) && Array.isArray(b[col])) {
+        return comp(a[col][0], b[col][0]) ? -1 : 1 // only sort on first element of both
+      }
+    })
   }
 
   // Called when the element is inserted in DOM
@@ -49,6 +75,7 @@ class SortableTable extends HTMLElement {
   }
 
   render () {
+    this._filteredData = JSON.parse(JSON.stringify(this._data));
     // search bar with filters first, TODO
 
     const table = this.shadowRoot.querySelector('.sortable-table__root')
@@ -57,11 +84,22 @@ class SortableTable extends HTMLElement {
     this._headers = document.createElement('tr')
     this._headers.addEventListener('click', (e) => this.headerClicked(e))
 
-    const headers = this._data.headers || []
-    headers.forEach((header) => {
+    const headers = this._filteredData.headers || []
+    headers.forEach((header, idx) => {
       const th = document.createElement('th')
       th.innerText = header
+      th.id = ["image", "name", "firmware", "language", "keyboard_models", "key_range"][idx];
       th.className = 'fw6 bb b--black-20 tl pb3 pr3 bg-white'
+      if (this._column === th.id) {
+        th.className += ' bg-light-green'
+        const arrow = document.createElement("span")
+        if (this._direction) {
+          arrow.className += 'arrow is-triangle is-top'
+        } else {
+          arrow.className += ' arrow is-triangle is-bottom'
+        }
+        th.appendChild(arrow)
+      }
       this._headers.appendChild(th)
     })
 
@@ -74,8 +112,7 @@ class SortableTable extends HTMLElement {
 
     const tdClasses = 'pv3 pr3 bb b--black-20'
 
-    // add data here
-    const rows = this._data.layouts || []
+    const rows = this.sortData([...this._filteredData.layouts])
     rows.forEach((row) => {
       const tr = document.createElement('tr')
       tr.className = 'striped--light-gray'
