@@ -4,6 +4,7 @@ class SortableTable extends HTMLElement {
   constructor () {
     super()
     this._data = {}
+    this._filteredSortedData = {}
   }
 
   get src() {
@@ -48,7 +49,7 @@ class SortableTable extends HTMLElement {
     }
   }
 
-  render (tableData) {
+  render () {
     // search bar with filters first, TODO
 
     let table = this.shadowRoot.querySelector(".sortable-table__root");
