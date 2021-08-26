@@ -1,0 +1,32 @@
+{
+  "headers": [
+    "",
+    "Layout Name",
+    "Firmware",
+    "Language",
+    "Keyboard Model(s)",
+    "Keys"
+  ],
+  "layouts": [
+    {
+      "name": "Miryoku",
+      "url": "https://github.com/manna-harbour/miryoku",
+      "image_url": null,
+      "firmware": "QMK",
+      "language": "English US",
+      "alphas_layout": "Colemak Mod-DH",
+      "keyboard_models": "Many",
+      "key_range": ["36", "+"]
+    },
+    {
+      "name": "dustypomerleau",
+      "url": "https://github.com/qmk/qmk_firmware/tree/master/keyboards/minidox/keymaps/dustypomerleau",
+      "image_url": null,
+      "firmware": "QMK",
+      "language": "English US",
+      "alphas_layout": "Colemak DHm",
+      "keyboard_models": "Minidox",
+      "key_range": ["36", "+"]
+   }
+  ]
+}
