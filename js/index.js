@@ -90,16 +90,6 @@ class SortableTable extends HTMLElement {
       th.innerText = header
       th.id = ["image", "name", "firmware", "language", "keyboard_models", "key_range"][idx];
       th.className = 'fw6 bb b--black-20 tl pb3 pr3 bg-white'
-      if (this._column === th.id) {
-        th.className += ' bg-light-green'
-        const arrow = document.createElement("span")
-        if (this._direction) {
-          arrow.className += 'arrow is-triangle is-top'
-        } else {
-          arrow.className += ' arrow is-triangle is-bottom'
-        }
-        th.appendChild(arrow)
-      }
       this._headers.appendChild(th)
     })
 
