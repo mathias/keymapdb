@@ -79,7 +79,9 @@ class SortableTable extends HTMLElement {
     // search bar with filters first, TODO
 
     const table = this.shadowRoot.querySelector('.sortable-table__root')
-    table.innerHTML = ''
+
+    const thead = this.shadowRoot.querySelector('thead')
+    thead.innerHTML = '' // Clear this out on each render for lack of a better way
 
     this._headers = document.createElement('tr')
     this._headers.addEventListener('click', (e) => this.headerClicked(e))
@@ -93,12 +95,10 @@ class SortableTable extends HTMLElement {
       this._headers.appendChild(th)
     })
 
-    const thead = document.createElement('thead')
     thead.appendChild(this._headers)
-    table.appendChild(thead)
 
-    const tbody = document.createElement('tbody')
-    tbody.className = 'lh-copy'
+    const tbody = this.shadowRoot.querySelector('tbody')
+    tbody.innerHTML = '' // Clear this out on each render for lack of a better way
 
     const tdClasses = 'pv3 pr3 bb b--black-20'
 
