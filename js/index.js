@@ -36,7 +36,8 @@ class SortableTable extends HTMLElement {
   headerClicked (e) {
     this._selected = e.target.cellIndex;
     const columnIndex = e.target.cellIndex - 1;
-    const column = ["name", "firmware", "language", "keyboard_models", "key_range"][columnIndex];
+    // TODO fix: This shouldn't be hardcoded
+    const column = ["name", "firmware", "language", "alphas_layout", "keyboard_models", "key_range"][columnIndex];
 
     this._direction = (column !== this._column) ? true : !this._direction
     this._column = column
@@ -49,7 +50,6 @@ class SortableTable extends HTMLElement {
     const col = this._column;
     const dir = this._direction;
     const comp = dir ? (a, b) => a < b : (a, b) => a > b;
-    console.log(col)
     return data.sort((a, b) => {
       if (typeof(a[col]) === "string" && typeof(b[col]) === "string") {
         return comp(a[col], b[col]) ? -1 : 1
@@ -88,7 +88,7 @@ class SortableTable extends HTMLElement {
     headers.forEach((header, idx) => {
       const th = document.createElement('th')
       th.innerText = header
-      th.id = ["image", "name", "firmware", "language", "keyboard_models", "key_range"][idx];
+      th.id = ["image", "name", "firmware", "language", "alphas_layout", "keyboard_models", "key_range"][idx];
       th.className = 'fw6 bb b--black-20 tl pb3 pr3 bg-white'
       this._headers.appendChild(th)
     })
@@ -109,7 +109,7 @@ class SortableTable extends HTMLElement {
 
       const tdImage = document.createElement('td')
       tdImage.className = tdClasses
-      tdImage.innerHTML = row.image_url
+      //tdImage.innerHTML = row.image_url
       tr.appendChild(tdImage)
 
       const tdName = document.createElement('td')
@@ -129,6 +129,11 @@ class SortableTable extends HTMLElement {
       tdLanguage.className = tdClasses
       tdLanguage.innerHTML = row.language
       tr.appendChild(tdLanguage)
+
+      const tdAlphas = document.createElement('td')
+      tdAlphas.className = tdClasses
+      tdAlphas.innerHTML = row.alphas_layout
+      tr.appendChild(tdAlphas)
 
       const tdModels = document.createElement('td')
       tdModels.className = tdClasses

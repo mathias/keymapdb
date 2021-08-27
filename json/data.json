@@ -1,9 +1,10 @@
 {
   "headers": [
-    "",
-    "Layout Name",
+    "Image",
+    "Name",
     "Firmware",
     "Language",
+    "Alphas Layout",
     "Keyboard Model(s)",
     "Keys"
   ],
@@ -11,12 +12,17 @@
     {
       "name": "Miryoku",
       "url": "https://github.com/manna-harbour/miryoku",
-      "image_url": null,
+      "image_url": "https://raw.githubusercontent.com/manna-harbour/miryoku/master/data/cover/miryoku-kle-cover.png",
       "firmware": "QMK",
       "language": "English US",
       "alphas_layout": "Colemak Mod-DH",
       "keyboard_models": "Many",
-      "key_range": ["36", "+"]
+      "key_range": [36],
+      "media_keys": true,
+      "mouse_keys": true,
+      "alternative_layouts": ["colemak_alphas", "qwerty_alphas", "dvorak_alphas", "halmak_alphas", "workman_alphas"],
+      "chording": false,
+      "layers": 8
     },
     {
       "name": "dustypomerleau",
@@ -26,7 +32,37 @@
       "language": "English US",
       "alphas_layout": "Colemak DHm",
       "keyboard_models": "Minidox",
-      "key_range": ["36", "+"]
+      "key_range": [36]
+   },
+   {
+     "name": "RSTHD Combos",
+     "url": "https://github.com/qmk/qmk_firmware/tree/master/keyboards/minidox/keymaps/rsthd_combos",
+     "image_url": "https://camo.githubusercontent.com/5a1ed762f858048e5ba78cab2c5875a355cb5d08c26eeb5721416992b4bd8529/68747470733a2f2f6c6976652e737461746963666c69636b722e636f6d2f36353533352f34393932363234393337325f373761623865626139355f7a2e6a7067",
+     "firmware": "QMK",
+     "language": "English UK",
+     "alphas_layout": "RSTHD",
+     "keyboard_models": "Minidox",
+     "key_range": [36]
+   },
+   {
+     "name": "Kyria default",
+     "url": "https://github.com/qmk/qmk_firmware/tree/master/keyboards/kyria/keymaps/default",
+     "image_url": "",
+     "firmware": "QMK",
+     "language": "English US",
+     "alphas_layout": "QWERTY",
+     "keyboard_models": "Kyria",
+     "key_range": [48, 50]
+   },
+   {
+     "name": "ASETNIOP",
+     "url": "http://asetniop.com/",
+     "image_url": "",
+     "firmware": "QMK",
+     "language": "English US",
+     "alphas_layout": "ASETNIOP",
+     "keyboard_models": "Many",
+     "key_range": [10]
    }
   ]
 }
