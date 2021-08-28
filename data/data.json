@@ -15,7 +15,7 @@
       "image_url": "https://raw.githubusercontent.com/manna-harbour/miryoku/master/data/cover/miryoku-kle-cover.png",
       "firmware": "QMK",
       "language": "English US",
-      "alphas_layout": "Colemak Mod-DH",
+      "alphas_layout": "Colemak-DH",
       "keyboard_models": "Many",
       "key_range": [36],
       "media_keys": true,
@@ -30,7 +30,7 @@
       "image_url": null,
       "firmware": "QMK",
       "language": "English US",
-      "alphas_layout": "Colemak DHm",
+      "alphas_layout": "Colemak-DH",
       "keyboard_models": "Minidox",
       "key_range": [36]
    },
@@ -63,6 +63,16 @@
      "alphas_layout": "ASETNIOP",
      "keyboard_models": "Many",
      "key_range": [10]
+   },
+   {
+     "name": "Seniply",
+     "url": "https://stevep99.github.io/seniply/",
+     "image_url": "https://stevep99.github.io/seniply/gfx/seniply_us_matrix_all.png",
+     "firmware": "QMK",
+     "language": "English US",
+     "alphas_layout": "Colemak-DH",
+     "keyboard_models": ["Planck", "Atreus", "Corne", "Let's Split", "Preonic", "Ergodox", "Moonlander"],
+     "key_range": [34]
    }
   ]
 }
