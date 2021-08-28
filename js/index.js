@@ -90,6 +90,9 @@ class SortableTable extends HTMLElement {
       th.innerText = header
       th.id = header.toLowerCase().replaceAll(' ', '_').replaceAll(')', '').replaceAll('(', '')
       th.className = 'fw6 bb b--black-20 tl pb3 pr3 bg-white'
+      if (this._column === th.id) {
+        th.className += ' underline'
+      }
       this._headers.appendChild(th)
     })
 
