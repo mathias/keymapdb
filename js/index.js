@@ -34,28 +34,26 @@ class SortableTable extends HTMLElement {
   }
 
   headerClicked (e) {
-    this._selected = e.target.cellIndex;
-    const columnIndex = e.target.cellIndex - 1;
-    // TODO fix: This shouldn't be hardcoded
-    const column = ["name", "firmware", "language", "alphas_layout", "keyboard_models", "key_range"][columnIndex];
+    this._selected = e.target.cellIndex
+    const column = e.target.id
 
     this._direction = (column !== this._column) ? true : !this._direction
     this._column = column
-    this.render();
+    this.render()
   }
 
-  sortData(data) {
+  sortData (data) {
     if (this._column === null) return data
 
-    const col = this._column;
-    const dir = this._direction;
-    const comp = dir ? (a, b) => a < b : (a, b) => a > b;
+    const col = this._column
+    const dir = this._direction
+    const comp = dir ? (a, b) => a < b : (a, b) => a > b
     return data.sort((a, b) => {
-      if (typeof(a[col]) === "string" && typeof(b[col]) === "string") {
-        return comp(a[col], b[col]) ? -1 : 1
-      } else if (Array.isArray(a[col]) && Array.isArray(b[col])) {
-        return comp(a[col][0], b[col][0]) ? -1 : 1 // only sort on first element of both
-      }
+      let aVal, bVal;
+      aVal = Array.isArray(a[col]) ? a[col][0] : a[col]
+      bVal = Array.isArray(b[col]) ? b[col][0] : b[col]
+
+      return comp(aVal, bVal) ? -1 : 1
     })
   }
 
@@ -75,11 +73,13 @@ class SortableTable extends HTMLElement {
   }
 
   render () {
-    this._filteredData = JSON.parse(JSON.stringify(this._data));
+    this._filteredData = JSON.parse(JSON.stringify(this._data))
     // search bar with filters first, TODO
 
     const table = this.shadowRoot.querySelector('.sortable-table__root')
-    table.innerHTML = ''
+
+    const thead = this.shadowRoot.querySelector('thead')
+    thead.innerHTML = '' // Clear this out on each render for lack of a better way
 
     this._headers = document.createElement('tr')
     this._headers.addEventListener('click', (e) => this.headerClicked(e))
@@ -88,17 +88,15 @@ class SortableTable extends HTMLElement {
     headers.forEach((header, idx) => {
       const th = document.createElement('th')
       th.innerText = header
-      th.id = ["image", "name", "firmware", "language", "alphas_layout", "keyboard_models", "key_range"][idx];
+      th.id = header.toLowerCase().replaceAll(' ', '_').replaceAll(')', '').replaceAll('(', '')
       th.className = 'fw6 bb b--black-20 tl pb3 pr3 bg-white'
       this._headers.appendChild(th)
     })
 
-    const thead = document.createElement('thead')
     thead.appendChild(this._headers)
-    table.appendChild(thead)
 
-    const tbody = document.createElement('tbody')
-    tbody.className = 'lh-copy'
+    const tbody = this.shadowRoot.querySelector('tbody')
+    tbody.innerHTML = '' // Clear this out on each render for lack of a better way
 
     const tdClasses = 'pv3 pr3 bb b--black-20'
 
@@ -109,7 +107,7 @@ class SortableTable extends HTMLElement {
 
       const tdImage = document.createElement('td')
       tdImage.className = tdClasses
-      //tdImage.innerHTML = row.image_url
+      // tdImage.innerHTML = row.image_url
       tr.appendChild(tdImage)
 
       const tdName = document.createElement('td')
