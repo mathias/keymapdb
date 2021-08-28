@@ -137,17 +137,24 @@ class SortableTable extends HTMLElement {
 
       const tdModels = document.createElement('td')
       tdModels.className = tdClasses
-      tdModels.innerHTML = row.keyboard_models
+      const models = row.keyboard_models
+      let modelsStr = ''
+      if (Array.isArray(models) && models.length > 1) {
+        modelsStr = models.join(', ')
+      } else {
+        modelsStr = models
+      }
+      tdModels.innerHTML = modelsStr
       tr.appendChild(tdModels)
 
       const tdKeys = document.createElement('td')
       tdKeys.className = tdClasses
       let keyStr = ''
       const keyRange = row.key_range
-      if (keyRange.length === 2 && keyRange[1] === '+') {
-        keyStr = keyRange.join('')
+      if (keyRange.length > 1) {
+        keyStr = keyRange.join(', ')
       } else {
-        keyStr = row.key_range.join(', ')
+        keyStr = keyRange
       }
       tdKeys.innerHTML = keyStr
       tr.appendChild(tdKeys)
