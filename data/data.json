@@ -45,6 +45,36 @@
      "key_range": [36]
    },
    {
+     "name": "Seniply",
+     "url": "https://stevep99.github.io/seniply/",
+     "image_url": "https://stevep99.github.io/seniply/gfx/seniply_us_matrix_all.png",
+     "firmware": "QMK",
+     "language": "English US",
+     "alphas_layout": "Colemak-DH",
+     "keyboard_models": ["Planck", "Atreus", "Corne", "Let's Split", "Preonic", "Ergodox", "Moonlander"],
+     "key_range": [34]
+   },
+   {
+     "name": "Minidox Bepo",
+     "url": "https://github.com/qmk/qmk_firmware/tree/master/keyboards/minidox/keymaps/bepo",
+     "image_url": null,
+     "firmware": "QMK",
+     "language": "English US + French",
+     "alphas_layout": "BEPO",
+     "keyboard_models": ["Minidox"],
+     "key_range": [36]
+   },
+   {
+     "name": "Minidox Norman",
+     "url": "https://github.com/qmk/qmk_firmware/tree/master/keyboards/minidox/keymaps/norman",
+     "image_url": "https://camo.githubusercontent.com/9cb4e38c052dc317d4011c5b320923d13a0a58f952f575ae581198cd558d0a76/68747470733a2f2f692e696d6775722e636f6d2f724b5464796d702e706e67",
+     "firmware": "QMK",
+     "language": "English US",
+     "alphas_layout": "Norman",
+     "keyboard_models": ["Minidox"],
+     "key_range": [36]
+   },
+   {
      "name": "Kyria default",
      "url": "https://github.com/qmk/qmk_firmware/tree/master/keyboards/kyria/keymaps/default",
      "image_url": "",
@@ -65,14 +95,34 @@
      "key_range": [10]
    },
    {
-     "name": "Seniply",
-     "url": "https://stevep99.github.io/seniply/",
-     "image_url": "https://stevep99.github.io/seniply/gfx/seniply_us_matrix_all.png",
+     "name": "CwD's Centromere",
+     "url": "https://github.com/CommunistWitchDoctor/qmk_firmware/tree/master/keyboards/centromere/keymaps/buttery_cwd",
+     "image_url": null,
      "firmware": "QMK",
      "language": "English US",
-     "alphas_layout": "Colemak-DH",
-     "keyboard_models": ["Planck", "Atreus", "Corne", "Let's Split", "Preonic", "Ergodox", "Moonlander"],
-     "key_range": [34]
+     "alphas_layout": "Colemak",
+     "keyboard_models": ["Minidox"],
+     "key_range": [38]
+   },
+   {
+     "name": "/u/ijauradunbi's Squiggle layout",
+     "url": "https://github.com/qmk/qmk_firmware/tree/054021e8757a72de4d3fae1f58944e9c922d22d1/keyboards/squiggle/keymaps",
+     "image_url": null,
+     "firmware": "QMK",
+     "language": "English US",
+     "alphas_layout": "QWERTY",
+     "keyboard_models": ["Minidox"],
+     "key_range": [36]
+   },
+   {
+     "name": "winterNebs 34 key layout",
+     "url": "https://github.com/winterNebs/qmk_firmware/blob/master/users/winternebs/",
+     "image_url": null,
+     "firmware": "QMK",
+     "language": "English US",
+     "alphas_layout": "Workman",
+     "keyboard_models": ["GergoPlex"],
+     "key_range": [36]
    }
   ]
 }
