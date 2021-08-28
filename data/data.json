@@ -17,7 +17,7 @@
       "language": "English US",
       "alphas_layout": "Colemak-DH",
       "keyboard_models": "Many",
-      "key_range": [36],
+      "keys": [36],
       "media_keys": true,
       "mouse_keys": true,
       "alternative_layouts": ["colemak_alphas", "qwerty_alphas", "dvorak_alphas", "halmak_alphas", "workman_alphas"],
@@ -32,7 +32,7 @@
       "language": "English US",
       "alphas_layout": "Colemak-DH",
       "keyboard_models": "Minidox",
-      "key_range": [36]
+      "keys": [36]
    },
    {
      "name": "RSTHD Combos",
@@ -42,7 +42,7 @@
      "language": "English UK",
      "alphas_layout": "RSTHD",
      "keyboard_models": "Minidox",
-     "key_range": [36]
+     "keys": [36]
    },
    {
      "name": "Seniply",
@@ -52,7 +52,7 @@
      "language": "English US",
      "alphas_layout": "Colemak-DH",
      "keyboard_models": ["Planck", "Atreus", "Corne", "Let's Split", "Preonic", "Ergodox", "Moonlander"],
-     "key_range": [34]
+     "keys": [34]
    },
    {
      "name": "Minidox Bepo",
@@ -62,7 +62,7 @@
      "language": "English US + French",
      "alphas_layout": "BEPO",
      "keyboard_models": ["Minidox"],
-     "key_range": [36]
+     "keys": [36]
    },
    {
      "name": "Minidox Norman",
@@ -72,7 +72,7 @@
      "language": "English US",
      "alphas_layout": "Norman",
      "keyboard_models": ["Minidox"],
-     "key_range": [36]
+     "keys": [36]
    },
    {
      "name": "Kyria default",
@@ -82,7 +82,7 @@
      "language": "English US",
      "alphas_layout": "QWERTY",
      "keyboard_models": "Kyria",
-     "key_range": [48, 50]
+     "keys": [48, 50]
    },
    {
      "name": "ASETNIOP",
@@ -92,7 +92,7 @@
      "language": "English US",
      "alphas_layout": "ASETNIOP",
      "keyboard_models": "Many",
-     "key_range": [10]
+     "keys": [10]
    },
    {
      "name": "CwD's Centromere",
@@ -102,7 +102,7 @@
      "language": "English US",
      "alphas_layout": "Colemak",
      "keyboard_models": ["Minidox"],
-     "key_range": [38]
+     "keys": [38]
    },
    {
      "name": "/u/ijauradunbi's Squiggle layout",
@@ -112,7 +112,7 @@
      "language": "English US",
      "alphas_layout": "QWERTY",
      "keyboard_models": ["Minidox"],
-     "key_range": [36]
+     "keys": [36]
    },
    {
      "name": "winterNebs 34 key layout",
@@ -122,7 +122,7 @@
      "language": "English US",
      "alphas_layout": "Workman",
      "keyboard_models": ["GergoPlex"],
-     "key_range": [36]
+     "keys": [36]
    }
   ]
 }

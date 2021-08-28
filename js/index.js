@@ -42,18 +42,28 @@ class SortableTable extends HTMLElement {
     this.render()
   }
 
+  sortableString(string) {
+    let sortStr = string.replaceAll(/[\W]/g,'').toLowerCase()
+    return sortStr
+  }
+
   sortData (data) {
     if (this._column === null) return data
 
     const col = this._column
     const dir = this._direction
     const comp = dir ? (a, b) => a < b : (a, b) => a > b
+
     return data.sort((a, b) => {
       let aVal, bVal;
+
       aVal = Array.isArray(a[col]) ? a[col][0] : a[col]
       bVal = Array.isArray(b[col]) ? b[col][0] : b[col]
 
-      return comp(aVal, bVal) ? -1 : 1
+      aVal = aVal && aVal.toString() || ""
+      bVal = bVal && bVal.toString() || ""
+
+      return comp(this.sortableString(aVal), this.sortableString(bVal)) ? -1 : 1
     })
   }
 
@@ -151,7 +161,7 @@ class SortableTable extends HTMLElement {
       const tdKeys = document.createElement('td')
       tdKeys.className = tdClasses
       let keyStr = ''
-      const keyRange = row.key_range
+      const keyRange = row.keys
       if (keyRange.length > 1) {
         keyStr = keyRange.join(', ')
       } else {
