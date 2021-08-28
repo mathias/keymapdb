@@ -43,6 +43,15 @@ span.arrow {
   transform: rotate(45deg);
 }
 
+.arrow::after,
+.arrow .arrow::after {
+  border-color: red;
+}
+.arrow.is-triangle::after,
+.arrow .arrow.is-triangle::after {
+  border-color: transparent;
+  border-bottom-color: red;
+}
 .arrow::before,
 .arrow .arrow::before {
   background-color: red;
