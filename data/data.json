@@ -76,7 +76,7 @@
    },
    {
      "name": "Kyria default",
-     "url": "https://github.com/qmk/qmk_firmware/tree/master/keyboards/kyria/keymaps/default",
+     "url": "https://github.com/qmk/qmk_firmware/tree/master/keyboards/splitkb/kyria/keymaps/default",
      "image_url": "",
      "firmware": "QMK",
      "language": "English US",
